@@ -48,6 +48,8 @@ const client = new MongoClient(uri, {
 
 async function run() {
   try {
+    const usersCollection = client.db('stayHome').collection('users');
+
     // auth related api
     app.post('/jwt', async (req, res) => {
       const user = req.body
